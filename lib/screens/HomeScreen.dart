@@ -178,7 +178,6 @@ class HomeScreen extends StatelessWidget {
 
                     const SizedBox(height: 24),
 
-                    // Stats and Follow
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -195,7 +194,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         OutlinedButton.icon(
                           onPressed: () {
-                            // Aksi follow di sini
+                
                           },
                           style: OutlinedButton.styleFrom(
                             shape: RoundedRectangleBorder(
