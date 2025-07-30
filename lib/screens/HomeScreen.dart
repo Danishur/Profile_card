@@ -98,6 +98,7 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    // Profile
                     Row(
                       children: [
                         ClipRRect(
@@ -135,6 +136,8 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 24),
+
+                    // Contact Icons
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
@@ -146,6 +149,8 @@ class HomeScreen extends StatelessWidget {
                     const SizedBox(height: 24),
                     const Divider(),
                     const SizedBox(height: 16),
+
+                    // About
                     _buildSectionTitle("About"),
                     const SizedBox(height: 6),
                     const Text(
@@ -153,6 +158,8 @@ class HomeScreen extends StatelessWidget {
                       style: TextStyle(color: Colors.black87, height: 1.4),
                     ),
                     const SizedBox(height: 20),
+
+                    // Address
                     _buildSectionTitle("Address"),
                     const SizedBox(height: 6),
                     const Text(
@@ -160,11 +167,47 @@ class HomeScreen extends StatelessWidget {
                       style: TextStyle(color: Colors.black87, height: 1.4),
                     ),
                     const SizedBox(height: 20),
+
+                    // Daily Study
                     _buildSectionTitle("Daily Study"),
                     const SizedBox(height: 6),
                     const Text(
                       "Monday - Friday",
                       style: TextStyle(color: Colors.black87),
+                    ),
+
+                    const SizedBox(height: 24),
+
+                    // Stats and Follow
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Icon(Icons.group, color: Colors.grey.shade700, size: 20),
+                            const SizedBox(width: 4),
+                            const Text("312"),
+                            const SizedBox(width: 16),
+                            Icon(Icons.insert_drive_file, color: Colors.grey.shade700, size: 20),
+                            const SizedBox(width: 4),
+                            const Text("48"),
+                          ],
+                        ),
+                        OutlinedButton.icon(
+                          onPressed: () {
+                            // Aksi follow di sini
+                          },
+                          style: OutlinedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            side: BorderSide(color: Colors.deepOrange.shade300),
+                            foregroundColor: Colors.deepOrange.shade300,
+                          ),
+                          icon: const Icon(Icons.add, size: 18),
+                          label: const Text("Follow"),
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -176,7 +219,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildContactIcon(IconData icon, Color color) {
+  static Widget _buildContactIcon(IconData icon, Color color) {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -187,7 +230,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSectionTitle(String title) {
+  static Widget _buildSectionTitle(String title) {
     return Text(
       title,
       style: const TextStyle(
